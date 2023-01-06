@@ -180,7 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < width * width; i++) {
             const square = document.createElement('div')
             square.dataset.id = i
-            grid.appendChild(square)
+            if (grid !== null) {
+                grid.appendChild(square)
+            } else {
+                console.log(grid)
+            }
             squares.push(square)
         }
     }
@@ -249,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function dragStart() {
     draggedShip = this
     draggedShipLength = this.children.length
-    console.log(draggedShipLength)
+    //console.log(draggedShipLength)
     }
 
     function dragOver(e) {
